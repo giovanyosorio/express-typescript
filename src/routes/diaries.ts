@@ -1,10 +1,10 @@
 import {Router} from "express"
-
+import * as diaryService from "../services/diaryServices"
 const router=Router()
 
 
 router.get("/",(_req,res)=>{
-res.send("fetching all entry diareies")
+res.send(diaryService.getEntriesWithOutSensitiveInfo())
 })
 
 

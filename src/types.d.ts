@@ -8,3 +8,6 @@ export interface DiaryEntry {
     visibility: visibility;
     comment: string;
 }
+
+//export type NonSensitiveDiaryEntry = Pick<DiaryEntry, 'id' | "date"| "weather" | "visibility">;
+export type NonSensitiveDiaryEntry = Omit<DiaryEntry, 'comment'>;

@@ -1,8 +1,12 @@
 import diaryData from './diaries.json';
-import { DiaryEntry } from '../types';
+import { DiaryEntry,NonSensitiveDiaryEntry } from '../types';
 
 const diaries: Array<DiaryEntry> = diaryData as Array<DiaryEntry>
 
-export const getEntries = () => diaries
+export const getEntries = () :DiaryEntry[]=> diaries
 
-export const addEntry = () => null
+export const getEntriesWithOutSensitiveInfo = () :NonSensitiveDiaryEntry[]=>{
+    return diaries.map(({id,date,weather,visibility})=>({id,date,weather,visibility}))
+}
+
+export const addEntry = () :undefined=> undefined
