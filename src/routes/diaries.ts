@@ -18,8 +18,9 @@ router.get("/:id",(_req,res)=>{
 
 router.post("/",(_req,res)=>{
     const {date,weather,visibility,comment}=_req.body
-    const newDiaryEntry = diaryService.addEntry(date,weather,visibility,comment)
-    
+    const newDiaryEntry = diaryService.addEntry({date,weather,visibility,comment})
+    res.json(newDiaryEntry)
+
 })
 
 export default router
