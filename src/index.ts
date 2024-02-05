@@ -1,13 +1,16 @@
 import express from "express"
-const app=express()
+const app = express()
+import diaryRoutes from "./routes/diaries"
+
 app.use(express.json())
 
-const PORT=3000
+const PORT = 3000
 
-app.get("/ping",(req,res)=>{
+app.get("/ping",(_,res)=>{
     console.log("someone pinged here!!")
-    res.send("pop")
+    res.send("pong")
 })
+app.use("/api/diareies",diaryRoutes)
 
 app.listen(PORT,()=>{
     console.log(`listening on port ${PORT}`)
