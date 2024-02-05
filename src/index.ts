@@ -10,7 +10,7 @@ app.get("/ping",(_,res)=>{
     console.log("someone pinged here!!")
     res.send("pong")
 })
-app.use("/api/diareies",diaryRoutes)
+app.use("/api/diaries",diaryRoutes)
 
 app.listen(PORT,()=>{
     console.log(`listening on port ${PORT}`)
